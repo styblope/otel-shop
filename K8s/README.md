@@ -25,8 +25,8 @@ helm install instana-agent \
 Install Stan's OTel Shop on to your K8s cluster using the helm chart, see the [README](helm/README.md) for details of the various options.
 
 ```shell
-$ cd helm
-$ helm install --name otel-shop --namespace otel-shop .
+$ cd charts/otel-shop
+$ helm install otel-shop --namespace otel-shop .
 ```
 
 In OpenShift, you may need to change the default security context constraint (SCC) to allow containers to run with any UID and allow NET_ADMIN capability for mysql.
