@@ -29,6 +29,11 @@ $ cd helm
 $ helm install --name otel-shop --namespace otel-shop .
 ```
 
+In OpenShift, you may need to change the default security context constraint (SCC) to allow containers to run with any UID and allow NET_ADMIN capability for mysql.
+```shell
+$ oc adm policy add-scc-to-user privileged -z default
+```
+
 ## Quotas and Scaling
 
 You can apply resource quotas to the namespace where you installed Stan's OTel Shop.
